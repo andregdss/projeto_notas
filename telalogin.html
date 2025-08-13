@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #BED1EE;
+    }
+    .shadow-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    footer {
+      background-color: white;
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .btn-custom {
+      background-color: #2E425F; 
+      border-color: #2E425F;
+      color: white;
+    }
+    .btn-custom:hover {
+      background-color: #1d293b;
+      color: white; 
+    }
+  </style>
+</head>
+
+<body>
+</head>
+<body>
+  <div class="container py-5">
+    <!-- Logo -->
+    <div class="text-center mb-4">
+      <img src="images/cruzeirovirtual.png" alt="Logo Cruzeiro do Sul Virtual" style="max-height: 300px;">
+    </div>
+
+    <!-- Seção de Login -->
+    <div id="secaoLogin" class="shadow-box mx-auto mb-5" style="max-width: 800px;">
+      <h5 class="text-center fs-3">LOGIN</h5>
+      <div class="mb-3">
+        <label for="usuario" class="form-label fs-3">Usuário:</label>
+        <input type="text" id="usuario" class="form-control">
+      </div>
+      <div class="mb-5">
+        <label for="senha" class="form-label fs-3">Senha:</label>
+        <input type="text" id="senha" class="form-control">
+      </div>
+      <button id="salvarDadosLogin" class="btn btn-custom btn-lg w-50 mx-auto d-block">Entrar</button>
+    </div>
+
+    <footer>
+        © 2024 Criado por André Guedes para o Projeto Integrador
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Salvando dados de Login do aluno
+        document.getElementById('salvarDadosLogin').addEventListener('click', () => {
+            const usuario = document.getElementById('usuario').value.trim();
+            const senha = document.getElementById('senha').value.trim();
+
+            if (!usuario || !senha) {
+                alert('Campos de preenchimento obrigatório. \n\nPreencha todos os campos!');
+                return;
+            }
+
+            localStorage.setItem('cadastro', JSON.stringify({ usuario, senha }));
+            window.location.href = 'index.html';
+        });
+   </script> 
+</body>
+</html>
+
